@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # VPackProvider
 
 `VPackProvider` is a required wrapper that provides theme context and utilities to all V-Pack components.

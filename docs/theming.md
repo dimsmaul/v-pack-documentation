@@ -1,3 +1,7 @@
+---
+sidebar_position: 4
+---
+
 # Theming
 V-Pack uses Tailwind CSS via ```twrnc``` for styling. Customize your design system through ```tailwind.config.js```.
 
