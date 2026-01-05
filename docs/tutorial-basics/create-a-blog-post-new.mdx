@@ -1,0 +1,38 @@
+---
+sidebar_position: 8
+---
+
+import ExpoSnack from "@site/src/components/ExpoSnack";
+
+# VButton
+
+Button component dengan multiple variants.
+
+## Live Demo
+
+<ExpoSnack
+  snackId="@dimasmaulana/v-pack-documentation"
+  platform="android"
+  theme="dark"
+  height={600}
+/>
+
+## Features
+
+- 🎨 Multiple variants
+- 📏 Three sizes
+- ♿ Accessible
+
+## Basic Usage
+
+```tsx
+import { VButton } from "v-pack";
+
+<VButton variant="primary">Press Me</VButton>
+```
+
+| Prop    | Type                    | Default   |
+| ------- | ----------------------- | --------- |
+| variant | 'primary' \| 'secondary' | 'primary' |
+| size    | 'sm' \| 'md' \| 'lg'    | 'md'      |
+| onPress | () => void              | -         |
