@@ -2,6 +2,12 @@
 sidebar_position: 2
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+export const packageList = "v-pack twrnc dayjs zod react-hook-form @hookform/resolvers"
+
+
 # Installation
 
 ## Requirements
@@ -26,9 +32,17 @@ cd MyApp
 ```
 
 Install Package
-```bash
-npm install v-pack twrnc
-```
+<Tabs groupId="package-manager">
+  <TabItem value="npm" label="npm">
+    <CodeBlock language="bash">npm install {packageList}</CodeBlock>
+  </TabItem> 
+  <TabItem value="yarn" label="yarn">
+    <CodeBlock language="bash">yarn add {packageList}</CodeBlock>
+  </TabItem> 
+  <TabItem value="pnpm" label="pnpm"> 
+    <CodeBlock language="bash">pnpm add {packageList}</CodeBlock>
+  </TabItem> 
+</Tabs> 
 
 Initialize V-Pack
 ```bash
@@ -51,15 +65,3 @@ export default function App() {
   );
 }
 ```
-
-## Optional Dependencies
-```bash
-# For Calendar
-npm install dayjs
-
-# For Form
-npm install zod react-hook-form @hookform/resolvers
-```
-
-
- 
