@@ -199,7 +199,7 @@ function FeaturesSection() {
 function ComponentShowcase() {
   const components = [
     'VButton', 'VInput', 'VCalendar', 'VDialog', 'VDrawer',
-    'VAlert', 'VBadge', 'VAvatar', 'VTabs', 'VSwitch',
+    'VBanner', 'VBadge', 'VAvatar', 'VTabs', 'VToggle',
   ];
 
   return (
