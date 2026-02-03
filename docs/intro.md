@@ -2,46 +2,134 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Introduction
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Welcome to **V-Pack** - a beautiful, accessible React Native component library styled with [twrnc](https://github.com/jaredh159/tailwind-react-native-classnames).
 
-## Getting Started
+## What is V-Pack?
 
-Get started by **creating a new site**.
+V-Pack is a React Native component library that provides production-ready components with Tailwind CSS styling through twrnc. All components are built with TypeScript, accessibility in mind, and support for dark mode out of the box.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+## Features
 
-### What you'll need
+- **🎨 Tailwind CSS**: Full Tailwind utility classes in React Native via twrnc
+- **♿ Accessible**: Built with accessibility best practices
+- **🌙 Dark Mode**: Every component supports dark mode automatically
+- **📱 Cross Platform**: Works seamlessly on iOS, Android, and Web
+- **📦 TypeScript**: Full TypeScript support with type definitions
+- **🎯 Customizable**: Easy to customize with props and twrnc classes
 
-- [Node.js](https://nodejs.org/en/download/) version 20.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+## Installation
 
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
+Install V-Pack and its peer dependency twrnc:
 
 ```bash
-cd my-website
-npm run start
+npm install v-pack twrnc
+```
+Or with other package managers:
+```bash
+# Yarn
+yarn add v-pack twrnc
+
+# pnpm
+pnpm add v-pack twrnc
 ```
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+## Quick Start
+### 1. Setup twrnc
+First, create a tw.js file in your project root:
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+```js
+import { create } from 'twrnc';
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+const tw = create(require(`./tailwind.config.js`));
+
+export default tw;
+```
+### 2. Import and Use Components
+```tsx
+import React from 'react';
+import { View } from 'react-native';
+import { VButton, VInput, useTheme } from 'v-pack';
+import tw from './tw';
+
+export default function App() {
+  const { tw } = useTheme()
+  return (
+    <View style={tw`flex-1 items-center justify-center p-4`}>
+      <VInput 
+        placeholder="Enter your email"
+        style={tw`mb-4`}
+      />
+      <VButton 
+        title="Submit"
+        onPress={() => console.log('Pressed!')}
+      />
+    </View>
+  );
+}
+```
+### 3. Configure Tailwind (Optional)
+Create tailwind.config.js for custom theming:
+
+```js
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#006e79',
+        // Add your custom colors
+      },
+    },
+  },
+};
+```
+## Dark Mode Support
+All V-Pack components automatically support dark mode using twrnc's dark: prefix:
+
+```tsx
+<VButton 
+  style={tw`bg-white dark:bg-gray-900`}
+  title="Dark Mode Ready"
+/>
+```
+## Customization
+Every component accepts a style prop for custom styling:
+
+```tsx
+<VButton 
+  title="Custom Button"
+  style={tw`bg-blue-500 rounded-full px-8`}
+  textStyle={tw`text-white font-bold`}
+/>
+```
+## Requirements
+- React Native 0.64 or higher
+
+- Expo SDK 43 or higher (if using Expo)
+
+- twrnc 3.0 or higher
+
+- TypeScript
+V-Pack is written in TypeScript and includes type definitions. You'll get full IntelliSense support in VS Code and other editors.
+
+```tsx
+import type { VButtonProps } from 'v-pack';
+
+const MyButton: React.FC<VButtonProps> = (props) => {
+  return <VButton {...props} />;
+};
+```
+<!-- ## Browser Components
+Browse all available components in the Components section.
+
+## Example Projects
+Check out example implementations: -->
+
+Contributing
+Contributions are welcome! Please read our contributing guide to get started.
+
+License
+MIT © Venturo
+
+Ready to build? Explore the components!
